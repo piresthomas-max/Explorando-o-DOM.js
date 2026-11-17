@@ -20,7 +20,7 @@
 
 body {
     font-family: var(--font-family);
-    background-color: var(--color-light);
+    background-color: var(--color-light-secondary);
     color: var(--color-white);
     height: 300vh;
 }
@@ -31,7 +31,7 @@ body {
     top: 0;
     z-index: 1000;
 
-    background-color: var(--color-light-secondary);
+    background-color: var(--color-light);
     backdrop-filter: blur(12px);
     padding: 1rem 0.5rem;
 }
@@ -43,4 +43,46 @@ body {
 
     max-width: 75rem;
     margin: auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--color-mindaro);
+}
+
+.menu-toggle {
+    background-color: transparent;
+    border: none;
+    color: var(--color-white);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: var(--transition);
+}
+
+.menu-toggle:hover {
+    color: var(--color-mindaro);
+}
+
+.menu{
+    display: none;
+}
+
+@media screen and (min-width: 48rem) {
+    .menu-toggle{
+        display: none;
+    }
+
+    .menu{
+        display: block;
+    }
 }
