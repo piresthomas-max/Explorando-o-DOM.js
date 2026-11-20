@@ -1,15 +1,15 @@
 :root {
-    --font-family: 'Poppins', sans-serif;
+  --font-family: 'Poppins', sans-serif;
 
-    --color-light: #84abd6;
-    --color-light-secondary: #a3bdd6;
-    --color-mindaro: #feffb9;
-    --color-gray: #aaa5bd;
-    --color-white: #f4f1f1;
+  --color-light: #84abd6;
+  --color-light-secondary: #a3bdd6;
+  --color-mindaro: #feffb9;
+  --color-gray: #aaa5bd;
+  --color-white: #f4f1f1;
 
-    --transition: all 300ms ease;
+  --transition: all 300ms ease;
 
-    --header-height: 3.25rem;
+  --header-height: 3.25rem;
 }
 
 
@@ -98,15 +98,22 @@ body {
 
   backdrop-filter: blur(0.75rem);
 
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 
-    transform: translateY(-1rem);
-    pointer-events: none;
+  transform: translateY(-1rem);
+  pointer-events: none;
+}
+
+.menu.menu-ativo {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .menu a {
-    color: var(--color-white);
+  color: var(--color-white);
   font-size: 1.5rem;
   font-weight: 500;
   transition: var(--transition);
@@ -125,7 +132,7 @@ body {
   }
 
   .menu {
-    position:static;
+    position: static;
 
     width: auto;
     height: auto;
