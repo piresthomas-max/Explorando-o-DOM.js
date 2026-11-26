@@ -27,6 +27,14 @@ body {
   color: var(--color-white);
 }
 
+a:focus-visible {
+  outline: 0.125rem solid hsl(210, 93%, 45%);
+  outline-offset: 0.125rem;
+  border-radius: 1rem;
+  background-color: hsl(210, 93%, 45%);
+}
+
+
 .header {
   width: 100%;
   height: var(--header-height);
@@ -129,10 +137,10 @@ body {
 /* Modal */
 .modal {
   margin: auto;
-  background-color: var(--color-light-secondary);
+  background-color: #2d5174;
   color: var(--color-mindaro);
   border-radius: 2rem;
-  border: 0.0625rem solid var(--color-light-secondary);
+  border: 0.0625rem solid #2d5174;
   box-shadow: 0 1rem 3rem #00000080;
   overflow: visible;
 
@@ -144,11 +152,126 @@ body {
   position: relative;
 }
 
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  font-size: 1.25rem;
+
+
+  color: var(--color-gray);
+  background-color: #2d5174;
+
+  border: 0.0625rem solid var(--color-gray);
+  border-radius: 50%;
+
+  height: 2rem;
+  width: 2rem;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  transform: rotate(180deg);
+}
+
 .modal-content h2 {
   color: var(--color-mindaro);
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
 }
+
+/* Fundo do modal */
+.modal::backdrop {
+  background-color: rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.25rem);
+
+}
+
+.form-group input:focus,
+.modal-submit:focus {
+  border-color: hsl(210, 93%, 45%);
+  outline: 0.125rem solid hsl(210, 93%, 45%);
+}
+
+
+.modal-content p {
+  color: var(--color-gray);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modal-form .modal-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form {
+  gap: 1rem;
+  /*16px*/
+}
+
+.form-group {
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  color: var(--color-white);
+  border-radius: 1rem;
+  border: 0.0625rem solid var(--color-gray);
+  font-family: inherit;
+  font-size: 0.875rem;
+}
+
+
+
+.modal-submit {
+  padding: 0.875rem;
+  border-radius: 1rem;
+  border: none;
+  margin-top: 0.5rem;
+  background-color: #3d6e9e;
+  color: var(--color-white);
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal-submit:hover {
+  background-color: var(--color-light);
+  transform: translateY(-0.125rem);
+}
+
+.modal[open] {
+  animation: modal-entrada 300ms ease-in;
+}
+
+@keyframes modal-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(4rem) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
 
 @media screen and (min-width: 48rem) {
   .menu-toggle {
